@@ -35,7 +35,7 @@ def menu():
 def pesquisa():
     print('======== <<< ''\033[1;37;40m''PESQUISAR''\033[0;0m >>> ========')
     print('')
-    recebe_pesquisa = input('🔎 ')
+    recebe_pesquisa = input('> ')
 
     return recebe_pesquisa
 
@@ -44,9 +44,21 @@ def volta_menu():
 
 def invalida():
     print('\n''\033[1;49;91mOpção inválida. Tente novamente. \033[0;0m''')
+    print('')
 
 def cadastra():
-    print('Aba cadastro')
+    print('======== <<< ''\033[1;37;40m''CADASTRAR''\033[0;0m >>> ========')
+    print('')
+    nome = input('Nome: ')
+    cpf = input('CPF: ')
+    data = input('Data: ')
+    item = input('Item: ')
+    valor = input('Valor: ')
+    quantidade = input('Quantidade: ')
+    comissionado = input('Comissionado: ')
+    canal = input('Canal: ')
+    print('')
+    input('''\033[2;49;39mPressione Enter para confirmar \033[0;0m''')
 
 def lista():
     print('Aba lista')
@@ -55,4 +67,5 @@ def gera_relatorio():
     print('Aba relatório')
 
 def sai():
-    print('Volte sempre ;)')
+    print('\033[1;37;40m''Volte sempre ;)''\033[0;0m')
+    print('')

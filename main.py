@@ -8,15 +8,12 @@ while True:
     if escolha == '1':
         defs.limpa_terminal()
         defs.pesquisa()
-        print("\n\n\n")
+        print('')
         defs.volta_menu()
 
     elif escolha == '2':
         defs.limpa_terminal()
-        defs.criar_barra()
         defs.cadastra()
-        print("\n\n\n")
-        defs.volta_menu()
 
     elif escolha == '3':
         defs.limpa_terminal()
