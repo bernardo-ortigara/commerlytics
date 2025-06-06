@@ -9,19 +9,32 @@ def nome():
     
 def cpf():
   while true:
-    cpf_digitado = input('Digite seu CPF (apenas números): ')
-    if cpf_digitado.isdigit():
-      if len(cpf_digitado) == 11:
-        cpf_digitado = cpf
+  cpf = 1
+  cpf_digitado = input('Digite seu CPF (apenas números): ')
+  if cpf_digitado.isdigit(): #confere se tem pontos no meio 
+      if len(cpf_digitado) == 11: #confere se tem os 11 digitos
+          cpf = cpf_digitado #variavel que vai ser usada (cpf)
       else:
-        while len(cpf) != 11:
-        cpf = input('Certifique-se que o CPF tenha 11 números. Digite novamente: ')
-         
-    else:
+          while len(cpf_digitado) != 11:
+            cpf_digitado = input('Certifique-se que o CPF tenha 11 números. Digite novamente: ')
+            cpf_com_pontos = cpf_digitado
+            cpf_sem_pontos = cpf_com_pontos.replace('.', '')
+            cpf_digitado = cpf_sem_pontos
+            cpf = cpf_sem_pontos
+  else:
       cpf_com_pontos = cpf_digitado
-      cpf_sem_pontos = cpf_com_pontos.replace(".", "")
-      if len(cpf_sem_pontos) == 11:
-        cpf_digitado = cpf
+      cpf_sem_pontos = cpf_com_pontos.replace('.', '')
+      cpf_digitado = cpf_sem_pontos
+    
+      if len(cpf_digitado) == 11:
+        cpf = cpf_sem_pontos
+      else:
+        while len(cpf_digitado) != 11:
+            cpf_digitado = input('Certifique-se que o CPF tenha 11 números. Digite novamente: ')
+            cpf_com_pontos = cpf_digitado
+            cpf_sem_pontos = cpf_com_pontos.replace('.', '')
+            cpf_digitado = cpf_sem_pontos
+            cpf = cpf_sem_pontos
 
 
 def data():
