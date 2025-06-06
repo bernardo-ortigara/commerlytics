@@ -17,10 +17,7 @@ def cpf():
       else:
           while len(cpf_digitado) != 11:
             cpf_digitado = input('Certifique-se que o CPF tenha 11 números. Digite novamente: ')
-            cpf_com_pontos = cpf_digitado
-            cpf_sem_pontos = cpf_com_pontos.replace('.', '')
-            cpf_digitado = cpf_sem_pontos
-            cpf = cpf_sem_pontos
+            defs.tira_ponto_cpf()
   else:
       cpf_com_pontos = cpf_digitado
       cpf_sem_pontos = cpf_com_pontos.replace('.', '')
@@ -31,11 +28,7 @@ def cpf():
       else:
         while len(cpf_digitado) != 11:
             cpf_digitado = input('Certifique-se que o CPF tenha 11 números. Digite novamente: ')
-            cpf_com_pontos = cpf_digitado
-            cpf_sem_pontos = cpf_com_pontos.replace('.', '')
-            cpf_digitado = cpf_sem_pontos
-            cpf = cpf_sem_pontos
-
+            defs.tira_ponto_cpf()
 
 def data():
   
