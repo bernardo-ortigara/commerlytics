@@ -1,5 +1,6 @@
 import os
 import datetime
+import json
 
 def limpa_terminal():
     if os.name == 'nt':  # Windows
@@ -46,6 +47,22 @@ def invalida():
     print('\n''\033[1;49;91mOpção inválida. Tente novamente. \033[0;0m''')
     print('')
 
+def lista_clientes():
+    if os.path.exists('clientes.json'):
+        with open ('clientes.json', 'r', encoding = 'utf-8') as f:
+            try:
+                return json.load(f)
+            except json.JSONDecodeError:
+                return []
+    else:
+        return []
+    
+def imprime_clientes():
+    dados = lista_clientes()
+    for cliente in dados:
+        nome_formatado = cliente['nome'].ljust(30)
+        print(f"\033[1;37;40mNome: \033[0;0m{nome_formatado}\033[1;37;40mCPF:\033[0;0m {cliente['cpf']}")
+
 def cadastra():
     print('======== <<< ''\033[1;37;40m''CADASTRAR''\033[0;0m >>> ========')
     print('')
@@ -53,15 +70,35 @@ def cadastra():
     cpf = input('CPF: ')
     data = input('Data: ')
     item = input('Item: ')
-    valor = input('Valor: ')
+    valor = float(input('Valor: '))
     quantidade = input('Quantidade: ')
     comissionado = input('Comissionado: ')
     canal = input('Canal: ')
+
+    cliente_novo = {
+        'nome': nome,
+        'cpf': cpf,
+        'data': data,
+        'item': item,
+        'valor': valor,
+        'quantidade': quantidade,
+        'comissionado': comissionado,
+        'canal': canal,
+    }
+
+    clientes = lista_clientes()
+    clientes.append(cliente_novo)
+
+    with open('clientes.json', 'w', encoding='utf-8') as f:
+        json.dump(clientes, f, indent=4, ensure_ascii=False)
+
     print('')
     input('''\033[2;49;39mPressione Enter para confirmar \033[0;0m''')
 
 def lista():
-    print('Aba lista')
+    print('================= <<< ''\033[1;37;40m''CLIENTES''\033[0;0m >>> =================')
+    print('')
+    imprime_clientes()
 
 def gera_relatorio():
     print('Aba relatório')

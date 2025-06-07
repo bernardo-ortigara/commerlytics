@@ -1,0 +1,12 @@
+[
+    {
+        "nome": "Mmalmeron",
+        "cpf": "12345678910",
+        "data": "06/06/2025",
+        "item": "Panda",
+        "valor": 1.0,
+        "quantidade": "1",
+        "comissionado": "Matplotlib",
+        "canal": "python"
+    }
+]
