@@ -37,8 +37,26 @@ def pesquisa():
     print('======== <<< ''\033[1;37;40m''PESQUISAR''\033[0;0m >>> ========')
     print('')
     recebe_pesquisa = input('> ')
+    dados = lista_clientes()
+    for cliente in dados:
+        nome = cliente['nome'].strip().lower()
+        cpf = cliente['cpf']
 
-    return recebe_pesquisa
+        if recebe_pesquisa == nome or recebe_pesquisa == cpf:
+
+            limpa_terminal()
+            
+            print('======== <<< ''\033[1;37;40m''PESQUISAR''\033[0;0m >>> ========')
+            print('')
+
+            print(f"Nome: {cliente['nome']}")
+            print(f"CPF: {cliente['cpf']}")
+            print(f"Data: {cliente['data']}")
+            print(f"Item: {cliente['item']}")
+            print(f"Valor: {cliente['valor']}")
+            print(f"Quantidade: {cliente['quantidade']}")
+            print(f"Comissionado: {cliente['comissionado']}")
+            print(f"Canal: {cliente['canal']}")
 
 def volta_menu():
     input('''\033[2;49;39mPressione Enter para voltar ao menu \033[0;0m''')
