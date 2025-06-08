@@ -1,0 +1,22 @@
+[
+    {
+        "nome": "MM",
+        "cpf": "098765432191",
+        "data": "07/06/2025",
+        "item": "camiseta drop4",
+        "valor": 123456789.0,
+        "quantidade": "1",
+        "comissionado": "sim",
+        "canal": "Whatsapp"
+    },
+    {
+        "nome": "mauricio almeiron",
+        "cpf": "098765432112",
+        "data": "07/06/2025",
+        "item": "camiseta drop2",
+        "valor": 123.0,
+        "quantidade": "12",
+        "comissionado": "sim",
+        "canal": "Instagram"
+    }
+]
