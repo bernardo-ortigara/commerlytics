@@ -55,7 +55,6 @@ def data():
 def valor():
   while True:
     entrada = input('Valor: ')
-    
     if entrada == '':
         print('Erro! Entrada inválida.')
     elif entrada.replace('.', '', 1).isdigit():
@@ -67,7 +66,16 @@ def valor():
     else:
         print('Erro! Digite um número válido.')
         
-#def quantidade():
+def quantidade():
+  while True:
+    entrada = input('Quantidade: ')
+    if entrada == '':
+        print('Erro! Entrada inválida.')
+    elif entrada.isdigit():
+        quantidade = int(entrada)
+        break
+    else:
+        print('Erro! Digite um número inteiro válido.')
   
 #def comissionado():
   
