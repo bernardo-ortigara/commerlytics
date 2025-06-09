@@ -1,6 +1,7 @@
 import os
 import datetime
 import json
+import valida
 
 def limpa_terminal():
     if os.name == 'nt':  # Windows
@@ -84,8 +85,8 @@ def imprime_clientes():
 def cadastra():
     print('======== <<< ''\033[1;37;40m''CADASTRAR''\033[0;0m >>> ========')
     print('')
-    nome = input('Nome: ')
-    cpf = input('CPF: ')
+    nome = valida.nome()
+    cpf = valida.cpf()
     data = input('Data: ')
     item = input('Item: ')
     valor = float(input('Valor: '))
