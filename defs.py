@@ -90,7 +90,7 @@ def cadastra():
     data = valida.data()
     item = input('Item: ')
     valor = valida.valor()
-    quantidade = input('Quantidade: ')
+    quantidade = valida.quantidade()
     comissionado = input('Comissionado: ')
     canal = input('Canal: ')
 
