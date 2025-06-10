@@ -126,9 +126,6 @@ def sai():
     print('\033[1;37;40m''Volte sempre ;)''\033[0;0m')
     print('')
 
-def tira_ponto_cpf():
-    cpf_com_pontos = cpf_digitado
-    cpf_sem_pontos = cpf_com_pontos.replace('.', '')
-    cpf_digitado = cpf_sem_pontos
-    cpf = cpf_sem_pontos
+def tira_ponto_cpf(cpf_com_pontos):
+    return cpf_com_pontos.replace('.', '').replace('-', '')
  
