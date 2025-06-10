@@ -24,7 +24,7 @@ while True:
     elif escolha == '4':
         defs.limpa_terminal()
         defs.gera_relatorio()
-        print("\n\n\n")
+        print('')
         defs.volta_menu()
 
     elif escolha == '5':
