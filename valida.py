@@ -7,27 +7,12 @@ def nome():
     nome = input('Digite um nome válido: ')
     
 def cpf():
-  cpf = 1
-  cpf_sem_pontos = 1
-  cpf_digitado = input('CPF: ')
-  if cpf_digitado.isdigit(): #confere se tem pontos no meio 
-    if len(cpf_digitado) == 11: #confere se tem os 11 digitos
-        cpf = cpf_digitado #variavel que vai ser usada (cpf)
-    else:
-        while len(cpf_digitado) != 11:
-          cpf_digitado = input('Erro! Certifique-se que o CPF tenha 11 números. Digite novamente: ')
-          defs.tira_ponto_cpf()
-  else:
-    cpf_com_pontos = cpf_digitado
-    cpf_sem_pontos = cpf_com_pontos.replace('.', '')
-    cpf_digitado = cpf_sem_pontos
-    
-    if len(cpf_digitado) == 11:
-      cpf = cpf_sem_pontos
-    else:
-      while len(cpf_digitado) != 11:
-          cpf_digitado = input('Certifique-se que o CPF tenha 11 números. Digite novamente: ')
-          defs.tira_ponto_cpf()
+  cpf_digitado = input('Digite seu CPF: ')
+  cpf_digitado = defs.tira_ponto_cpf(cpf_digitado)
+  while cpf_digitado.isdigit() == False or len(cpf_digitado) != 11:
+    cpf_digitado = input('Certifique-se que o CPF tenha 11 números (apenas dígitos). Digite novamente: ')
+    cpf_digitado = defs.tira_ponto_cpf(cpf_digitado)
+    cpf = cpf_digitado
 
 def data():
   while True:
