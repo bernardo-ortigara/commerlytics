@@ -34,7 +34,14 @@ def data():
     else:
         print('A data deve seguir o padrão dd/mm/aaaa')
     
-#def item():
+def item():
+  while True:
+    entrada = input('Item: ')
+    if entrada == '':
+      print('Erro! Entrada inválida.')
+    else:
+      item = entrada
+      break
   
 def valor():
   while True:
@@ -61,6 +68,20 @@ def quantidade():
     else:
         print('Erro! Digite um número inteiro válido.')
   
-#def comissionado():
+def comissionado():
+  while True:
+    entrada = input('Comissionado: ')
+    if entrada == '':
+      print('Erro! Entrada inválida.')
+    else:
+      comissionado = entrada
+      break
   
-#def canal():
+def canal():
+  while True:
+    entrada = input('Comissionado: ')
+    if entrada == '':
+      print('Erro! Entrada inválida.')
+    else:
+      canal = entrada
+      break
