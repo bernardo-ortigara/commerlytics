@@ -88,11 +88,11 @@ def cadastra():
     nome = valida.nome()
     cpf = valida.cpf()
     data = valida.data()
-    item = input('Item: ')
+    item = valida.item()
     valor = valida.valor()
     quantidade = valida.quantidade()
-    comissionado = input('Comissionado: ')
-    canal = input('Canal: ')
+    comissionado = valida.comissionado()
+    canal = valida.canal()
 
     cliente_novo = {
         'nome': nome,
